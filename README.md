@@ -14,6 +14,6 @@ Use [TeX Live](https://www.tug.org/texlive/) on Linux or [MacTeX](https://www.tu
 
 ## Suggested tools
 
-- [Overleaf](https://www.overleaf.com/) for collaborative editing
+- [Overleaf](tex.zih.tu-dresden.de/) for collaborative editing
 - [Inkscape](https://inkscape.org/) or Adobe Illustrator for composing figures
 - [Zotero](https://www.zotero.org/) for maintaining a literature library and BibLaTeX file
