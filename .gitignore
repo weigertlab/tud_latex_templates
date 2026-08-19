@@ -3,6 +3,7 @@
 .DS_Store
 
 # LaTeX build artifacts
+*-SAVE-ERROR
 *.acn
 *.acr
 *.alg

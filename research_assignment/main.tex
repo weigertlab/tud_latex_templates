@@ -5,7 +5,10 @@
   numbers=noenddot,
   parskip=half,
   cdgeometry=symmetric,
-  cd=barcolor
+  cd=barcolor,
+  % Remove this option and comment out the three font lines below to restore
+  % the default TUD Open Sans body font.
+  cdfont=false
 ]{tudscrartcl}
 
 \usepackage[utf8]{inputenc}
@@ -22,8 +25,14 @@
 \patchcmd{\tud@mainlogo@set}{\@tempa{TUD-white}}{\@tempa{assets/TUD-white}}{}{}
 \makeatother
 \usepackage{amsmath,amssymb}
+% Palatino-style serif text and matching mathematics
+\usepackage[nohelv]{newpxtext}
+\usepackage{newpxmath}
+\renewcommand{\sfdefault}{opensans-TLF} % Keep TUD Open Sans for headings
 \usepackage{booktabs}
 \usepackage{subcaption}
+\captionsetup{font=small}
+\captionsetup[subfigure]{font=small}
 \usepackage{csquotes}
 \usepackage[
   backend=biber,
@@ -32,6 +41,7 @@
 ]{biblatex}
 \addbibresource{references.bib}
 \usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,noabbrev,nameinlink]{cleveref}
 \input{definitions}
 
 % Document metadata

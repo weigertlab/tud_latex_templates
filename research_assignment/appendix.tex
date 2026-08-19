@@ -20,16 +20,17 @@ experiments: ``We trained the model for 100 epochs.'', ``We collected 1000 sampl
 \verb|\eg|, \verb|\ie|, and \verb|\etc|, and for the number sets \verb|\R|,
 \verb|\Z|, \verb|\N|, \verb|\Q|, and \verb|\C|. For example,
 \verb|$x \in \R^n$| produces $x \in \R^n$
-\item Add a \verb|\label| to sections, equations, figures, and tables and refer
-to them with \verb|\ref|, \eg Equation~\ref{eq:f1-score}. Do not type reference
-numbers manually
+\item Add a \verb|\label| to sections, equations, figures, and tables. Refer to
+them with \verb|\cref|, which automatically inserts the object type such as
+Figure, Table, or Equation. For example, \verb|\cref{eq:f1-score}| produces
+\cref{eq:f1-score} whereas \verb|\cref{fig:example-box-plot}| produces \cref{fig:example-box-plot}
 \item In general, refer to each figure and table in the text before it appears
 
 \end{itemize}
 
 \latexTipsSection{Equations}
 
-Use \verb|$...$| for inline math, \eg \verb|$F_1$| produces $F_1$. Use the
+Use \verb|$...$| for inline math, \eg for the defintion of the $F_1$ score, see~\cref{eq:f1-score}. Use the
 \texttt{equation} environment for numbered equations:
 \begin{equation}
   F_1 = \frac{2\,\mathrm{TP}}
@@ -43,13 +44,16 @@ true positives, false positives, and false negatives.
 
 In general, use wide figures and place them at the top or bottom of a page.
 \Eg Figure~\ref{fig:example-box-plot} uses the full text
-width, while Figure~\ref{fig:data-visualizations} uses subfigures. Put captions
-below figures and briefly explain all panels, symbols, units, \etc
+width, while Figure~\ref{fig:data-visualizations} uses subfigures. 
+Put captions below figures and briefly explain all panels, symbols, units, \etc.
+Prefer vector formats such as PDF for plots, graphs, and diagrams (\eg if they contain text) to avoid rasterization
+artifacts.
+
 
 \begin{figure}[b]
   \centering
   \includegraphics[width=\linewidth]{figs/fig1.pdf}
-  \caption{\textbf{Example figure.} Line plot showing a noisy signal and its smoothed trend (left). Heat map showing a
+  \caption{Example figure. Line plot showing a noisy signal and its smoothed trend (left). Heat map showing a
   spatial intensity distribution (right).}
   \label{fig:example-box-plot}
 \end{figure}
@@ -74,21 +78,20 @@ below figures and briefly explain all panels, symbols, units, \etc
     \caption{Violin plot}
     \label{fig:data-violin}
   \end{subfigure}
-  \caption{\textbf{Alternative visualizations of the same data.} Each panel
+  \caption{Alternative visualizations of the same data. Each panel
   shows the same synthetic Iris-style dataset.}
   \label{fig:data-visualizations}
 \end{figure}
 
 \latexTipsSection{Tables}
 
-Put table captions above the table. Use \texttt{booktabs}, omit vertical lines,
-keep decimal places consistent, and bold the best value in each column, as in
+Use \texttt{booktabs}, omit vertical lines,
+and keep decimal places consistent. For comparative results such as metrics or
+ablations, bold the best value in each column where appropriate, as in
 Table~\ref{tab:example-results}.
 
 \begin{table}[b]
   \centering
-  \caption{\textbf{Example quantitative comparison.} We show accuracy, precision, and recall (higher is better) as well as error (lower is better) for three methods.}
-  \label{tab:example-results}
   \begin{tabular}{lrrrr}
     \toprule
     Method & Accuracy $\uparrow$ & Precision $\uparrow$ & Recall $\uparrow$ & Error $\downarrow$ \\
@@ -98,4 +101,6 @@ Table~\ref{tab:example-results}.
     Method C & \textbf{0.89} & 0.84 & 0.82 & \textbf{0.15} \\
     \bottomrule
   \end{tabular}
+  \caption{Example quantitative comparison. Shown are accuracy, precision, and recall (higher is better) as well as error (lower is better) for three methods.}
+  \label{tab:example-results}
 \end{table}
