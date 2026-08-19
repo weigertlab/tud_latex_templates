@@ -1,0 +1,75 @@
+\documentclass[
+  paper=a4,
+  fontsize=11pt,
+  english,
+  numbers=noenddot,
+  parskip=half,
+  cdgeometry=symmetric,
+  cd=barcolor
+]{tudscrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{microtype}
+\usepackage{xspace}
+\usepackage{graphicx}
+\graphicspath{{assets/}}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\tud@mainlogo@set}{\@tempa{TUD-black}}{\@tempa{assets/TUD-black}}{}{}
+\patchcmd{\tud@mainlogo@set}{\@tempa{TUD-blue}}{\@tempa{assets/TUD-blue}}{}{}
+\patchcmd{\tud@mainlogo@set}{\@tempa{TUD-white}}{\@tempa{assets/TUD-white}}{}{}
+\makeatother
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none
+]{biblatex}
+\addbibresource{references.bib}
+\usepackage[hidelinks]{hyperref}
+\input{definitions}
+
+% Document metadata
+\faculty{Faculty of Computer Science}
+\institute{}
+\chair{Chair of Machine Learning for Spatial Understanding}
+\subject{Research Assignment}
+\title{Title of the Research Assignment}
+\subtitle{Optional subtitle}
+\author{Forename Surname}
+\date{Matriculation number: 12345678\\[0.5em]\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+
+Introduce the project objective and its context.
+
+\section{Methods}
+
+Describe the approach and implementation.
+
+\section{Results}
+
+Present and discuss the results.
+
+\section{Conclusion}
+
+Summarize the main outcome and remaining limitations.
+
+\printbibliography[heading=bibintoc]
+
+\clearpage
+\appendix
+\input{appendix.tex}
+
+\end{document}

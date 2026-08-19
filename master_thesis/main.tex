@@ -1,0 +1,103 @@
+\documentclass[
+  paper=a4,
+  BCOR=5mm,
+  ngerman,
+  english,
+  twoside,
+  numbers=noenddot,
+  parskip=half,
+  cdgeometry=symmetric,
+  cd=barcolor,
+  chapterpage=false,
+  captions=tableheading
+]{tudscrbook}
+
+% Document metadata: edit these values
+\newcommand*{\ThesisTitle}{Title of the Thesis}
+\newcommand*{\ThesisAuthor}{Forename Surname}
+\newcommand*{\ThesisMatriculationNumber}{12345678}
+\newcommand*{\ThesisDateOfBirth}{1 January 2000}
+\newcommand*{\ThesisPlaceOfBirth}{Place of birth}
+\newcommand*{\ThesisSupervisor}{Prof. Dr. Martin Weigert}
+\newcommand*{\ThesisSecondReferee}{Second referee}
+
+\usepackage{tudscrcolor}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{csquotes}
+\usepackage{microtype}
+\usepackage{xspace}
+\usepackage{setspace}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\graphicspath{{assets/}}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\tud@mainlogo@set}{\@tempa{TUD-black}}{\@tempa{assets/TUD-black}}{}{}
+\patchcmd{\tud@mainlogo@set}{\@tempa{TUD-blue}}{\@tempa{assets/TUD-blue}}{}{}
+\patchcmd{\tud@mainlogo@set}{\@tempa{TUD-white}}{\@tempa{assets/TUD-white}}{}{}
+\makeatother
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{acronym}
+\input{definitions}
+
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  sorting=ynt
+]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage[
+  colorlinks=true,
+  linkcolor=.,
+  citecolor=.,
+  urlcolor=.,
+  pdfdisplaydoctitle=true
+]{hyperref}
+
+\hypersetup{
+  pdftitle={\ThesisTitle},
+  pdfauthor={\ThesisAuthor},
+  pdfsubject={Master Thesis},
+  pdfkeywords={}
+}
+
+\setstretch{1.1}
+\frenchspacing
+\clubpenalty=9999
+\widowpenalty=9999
+\displaywidowpenalty=9999
+
+\begin{document}
+
+\frontmatter
+\pagenumbering{Roman}
+\input{frontmatter/title}
+\input{frontmatter/declaration}
+\input{frontmatter/abstract}
+
+\tableofcontents
+\input{frontmatter/acronyms}
+
+\mainmatter
+\input{chapters/introduction}
+\input{chapters/background}
+\input{chapters/methods}
+\input{chapters/results}
+\input{chapters/conclusion}
+
+\printbibliography[heading=bibintoc]
+
+\listoffigures
+\listoftables
+
+\appendix
+\input{appendix}
+
+\end{document}
