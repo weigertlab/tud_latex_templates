@@ -10,10 +10,11 @@ Run `make` in any template directory to build the PDF
 
 ## Local LaTeX installation
 
-Use [TeX Live](https://www.tug.org/texlive/) on Linux or [MacTeX](https://www.tug.org/mactex/) on macOS for local builds. The templates require the [`tudscr`](https://ctan.org/pkg/tudscr) package
+Use [TeX Live](https://www.tug.org/texlive/) on Linux or [MacTeX](https://www.tug.org/mactex/) on macOS for local builds. The templates require the [`tudscr`](https://ctan.org/pkg/tudscr) package (included in TeX Live).
 
 ## Suggested tools
 
+- `python`/`jupyter` with `matplotlib`/`seaborn` for generating figures from data
 - [Overleaf](https://tex.zih.tu-dresden.de/) for collaborative editing
 - [Inkscape](https://inkscape.org/) or Adobe Illustrator for composing figures
 - [Zotero](https://www.zotero.org/) for maintaining a literature library and BibLaTeX file
